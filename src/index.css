@@ -1,0 +1,111 @@
+@import url('https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Rajdhani:wght@400;500;600;700&family=Space+Mono:wght@400;700&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    --background: 220 20% 7%;
+    --foreground: 45 100% 96%;
+
+    --card: 220 18% 10%;
+    --card-foreground: 45 100% 96%;
+
+    --popover: 220 18% 10%;
+    --popover-foreground: 45 100% 96%;
+
+    --primary: 43 100% 50%;
+    --primary-foreground: 220 20% 7%;
+
+    --secondary: 220 15% 15%;
+    --secondary-foreground: 45 80% 90%;
+
+    --muted: 220 15% 13%;
+    --muted-foreground: 220 10% 55%;
+
+    --accent: 43 80% 45%;
+    --accent-foreground: 220 20% 7%;
+
+    --destructive: 0 72% 50%;
+    --destructive-foreground: 0 0% 100%;
+
+    --border: 220 15% 18%;
+    --input: 220 15% 18%;
+    --ring: 43 100% 50%;
+
+    --radius: 0.375rem;
+
+    --sidebar-background: 220 20% 5%;
+    --sidebar-foreground: 45 80% 90%;
+    --sidebar-primary: 43 100% 50%;
+    --sidebar-primary-foreground: 220 20% 7%;
+    --sidebar-accent: 220 15% 12%;
+    --sidebar-accent-foreground: 45 80% 90%;
+    --sidebar-border: 220 15% 15%;
+    --sidebar-ring: 43 100% 50%;
+
+    --gold: 43 100% 50%;
+    --gold-dim: 43 60% 35%;
+    --gold-glow: 43 100% 65%;
+    --surface: 220 18% 10%;
+    --surface-elevated: 220 15% 14%;
+    --success: 142 70% 45%;
+    --warning: 38 92% 50%;
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+
+  body {
+    @apply bg-background text-foreground font-body antialiased;
+    font-feature-settings: "cv02", "cv03", "cv04", "cv11";
+  }
+
+  h1, h2, h3, h4, h5, h6 {
+    @apply font-display tracking-wider;
+  }
+}
+
+@layer utilities {
+  .text-gold-gradient {
+    background: linear-gradient(135deg, hsl(43 100% 50%), hsl(43 100% 70%), hsl(43 80% 45%));
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+  }
+
+  .bg-gold-gradient {
+    background: linear-gradient(135deg, hsl(43 100% 50%), hsl(43 80% 40%));
+  }
+
+  .border-gold {
+    border-color: hsl(43 100% 50% / 0.3);
+  }
+
+  .shadow-gold {
+    box-shadow: 0 0 20px hsl(43 100% 50% / 0.15), 0 0 60px hsl(43 100% 50% / 0.05);
+  }
+
+  .glow-gold {
+    box-shadow: 0 0 10px hsl(43 100% 50% / 0.3), 0 0 30px hsl(43 100% 50% / 0.1);
+  }
+
+  .chess-pattern {
+    background-image: 
+      linear-gradient(45deg, hsl(220 15% 12%) 25%, transparent 25%),
+      linear-gradient(-45deg, hsl(220 15% 12%) 25%, transparent 25%),
+      linear-gradient(45deg, transparent 75%, hsl(220 15% 12%) 75%),
+      linear-gradient(-45deg, transparent 75%, hsl(220 15% 12%) 75%);
+    background-size: 40px 40px;
+    background-position: 0 0, 0 20px, 20px -20px, -20px 0px;
+  }
+
+  .projector-text {
+    @apply font-display tracking-[0.2em] uppercase;
+    text-shadow: 0 0 20px hsl(43 100% 50% / 0.5);
+  }
+}
